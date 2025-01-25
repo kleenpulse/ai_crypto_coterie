@@ -2,13 +2,15 @@
 @config "../tailwind.config.ts";
 
 #menu-button span {
-	width: 30px;
+	width: 27px;
 	height: 3px;
 	border-radius: 2px;
-	background-color: #b3f202;
 	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
 		background-color 0.5s ease-in-out;
 	transform-origin: center;
+	&:nth-child(2) {
+		width: 22px;
+	}
 }
 
 [data-menu-open="true"] span:nth-child(1) {
@@ -26,7 +28,6 @@
 	background: #fff;
 }
 [data-menu-ul] {
-	background-color: #262929;
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-direction: column;

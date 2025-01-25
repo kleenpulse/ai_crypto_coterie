@@ -10,6 +10,7 @@ import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { NavStateProps } from "@/types/nav-states.types";
 import MobileNav from "./mobile-navbar";
+import Image from "next/image";
 
 export default function HomeNavbar() {
 	const { setActiveLink, activeLink, hideNavbar, setHideNavbar } =
@@ -59,17 +60,17 @@ export default function HomeNavbar() {
 	return (
 		<nav
 			className={cn(
-				"fixed left-1/2 z-[100] flex w-full max-w-[90%] -translate-x-1/2 transform-gpu items-center rounded-full border border-white/15 px-3 py-2 transition-all duration-300 min-[500px]:px-5  xl:max-w-[1217px] font-inter",
+				"fixed left-1/2 z-[100] flex w-full md:max-w-[90%] -translate-x-1/2 transform-gpu items-center rounded-full md:border border-white/15 px-3 py-2 transition-all duration-300 sm:px-5  xl:max-w-[1217px] font-inter",
 				isHeroInView
-					? "top-5 border-white/5 bg-white/10"
-					: "top-2 border-white/25 bg-white/15 backdrop-blur-md",
+					? "top-5 border-white/5 md:bg-white/10"
+					: "top-2 border-white/25 md:bg-white/15 backdrop-blur-md",
 				hideNavbar ? "-translate-y-[150px]" : "translate-y-0"
 			)}
 		>
 			<div className="w-full overflow-hidden">
 				<div className=" flex w-full items-center gap-4 sm:justify-between">
 					<button
-						className={cn(" flex items-end gap-x-1")}
+						className={cn(" flex items-center gap-x-1")}
 						onClick={() => {
 							scroller.scrollTo("hero__ref", {
 								duration: 1500,
@@ -79,7 +80,8 @@ export default function HomeNavbar() {
 							});
 						}}
 					>
-						<span className="font-semibold text-white sm:text-2xl lg:text-3xl font-inter">
+						<Image src="/home/logo.png" width={40} height={40} alt="" />
+						<span className="font-semibold text-white sm:text-2xl lg:text-3xl font-inter block md:hidden min-[900px]:block">
 							Coterie
 						</span>
 					</button>
@@ -93,7 +95,7 @@ export default function HomeNavbar() {
 								key={link.link}
 								onClick={() => handleLinkClick(link.link)}
 								className={cn(
-									"relative w-fit whitespace-nowrap text-neutral-100 transition-colors duration-300 hover:text-accent-main font-inter font-light",
+									"relative w-fit whitespace-nowrap text-neutral-100 transition-colors duration-300 hover:text-accent-main font-inter font-light text-sm min-[900px]:text-base",
 									{
 										"text-white font-medium": activeLink === link.link,
 									}

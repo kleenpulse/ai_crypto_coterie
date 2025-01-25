@@ -25,7 +25,7 @@ const FAQs = () => {
 		}
 	};
 	return (
-		<div className="relative min-h-screen w-full px-4 py-20 md:px-8 lg:pt-[104px]">
+		<div className="relative  w-full px-4 py-20 md:px-8 lg:pt-[104px]">
 			<div
 				ref={faqsRef}
 				className="mx-auto w-full max-w-[300px] text-center md:max-w-[400px] lg:max-w-[600px] text-white xl:max-w-[768px]"
@@ -36,9 +36,9 @@ const FAQs = () => {
 						opacity: faqsInView ? 1 : 0,
 						transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
 					}}
-					className="mb-4 text-center font-manrope text-gray-600"
+					className="mb-4 text-center font-light text-gray-300"
 				>
-					FAQs
+					FAQ
 				</p>
 				<h1
 					id="faq"

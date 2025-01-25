@@ -25,7 +25,7 @@ const Footer = () => {
 	};
 
 	return (
-		<footer className="w-full py-5 flex justify-between items-center relative z-20 text-white px-4 xl:px-10">
+		<footer className="w-full py-5 flex justify-center sm:justify-between items-center relative z-20 text-white px-4 xl:px-10 max-w-[1900px] mx-auto">
 			<p className="flex items-center gap-x-2">
 				<b>© AI-Powered</b>
 				<span>2025 all right reserved</span>
@@ -41,7 +41,7 @@ const Footer = () => {
 					</button>
 				))}
 			</div>
-			<div className="flex items-center gap-x-2">
+			<div className="hidden sm:flex items-center gap-x-2">
 				<LuGithub size={16} />
 				<FaTwitter size={16} />
 			</div>

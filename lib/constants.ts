@@ -1,9 +1,5 @@
-import HexagonIcon from "@/components/icons/hexagon-icon";
-import EagleIcon from "@/components/icons/eagle-icon";
 import { NavStateProps } from "@/types/nav-states.types";
 import { IconType } from "react-icons";
-import { FaTelegramPlane } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import { IntegrationProps } from "@/types/integration";
 import TrendsIcon from "@/components/icons/trends-icon";
 import TrackingIcon from "@/components/icons/tracking-icon";
@@ -106,28 +102,6 @@ export const FEATURES: FeaturesProps[] = [
 		icon: TrendsIcon,
 		title: "Historical Trends",
 		description: "Visualize sentiment evolution over time for better insights.",
-	},
-];
-export const SOCIALS: Socials[] = [
-	{
-		id: 1,
-		link: "https://twitter.com/sandor",
-		icon: FaXTwitter,
-	},
-	{
-		id: 2,
-		link: "https://twitter.com/sandor",
-		icon: FaTelegramPlane,
-	},
-	{
-		id: 3,
-		link: "https://twitter.com/sandor",
-		icon: HexagonIcon,
-	},
-	{
-		id: 4,
-		link: "https://twitter.com/sandor",
-		icon: EagleIcon,
 	},
 ];
 

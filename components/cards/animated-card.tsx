@@ -53,7 +53,7 @@ export const AnimatedCard = ({
 			onMouseLeave={handleMouseLeave}
 			style={{ transform: transformStyle }}
 			className={cn(
-				"flex w-full items-center gap-x-3 gap-y-4 rounded-2xl  p-4 hover:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] max-lg:justify-between  lg:p-6 xl:gap-y-6",
+				"flex w-full items-center gap-x-5 lg:gap-x-3 gap-y-4 rounded-2xl   hover:shadow-[0_0_20px_0_rgba(0,0,0,0.1)]   p-6 xl:gap-y-6 ",
 				{
 					"bg-accent-yellow/50": data.id === 1,
 					"bg-accent-purple/70": data.id === 2,

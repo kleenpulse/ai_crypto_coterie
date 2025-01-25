@@ -25,7 +25,7 @@ export const IntegrationCard = ({
 					0.1 * index
 				}s`,
 			}}
-			className="w-full max-w-[280px] xl:max-w-[300px] relative flex flex-col justify-end gap-y-3	 font-roboto  text-xs sm:text-sm md:text-base h-[232px] border border-gray-400 rounded-xl p-3 bg-white/20 backdrop-blur-md"
+			className="w-full max-w-[280px] xl:max-w-[300px] relative flex flex-col justify-end gap-y-3	 font-roboto  text-xs sm:text-sm md:text-base h-[150px] sm:h-[232px] border border-gray-400 rounded-xl p-3 bg-white/20 backdrop-blur-3xl"
 		>
 			<p className="text-white font-light">{description}</p>
 		</div>

@@ -23,6 +23,23 @@ export default function MobileNav() {
 
 	const pathname = usePathname();
 
+	useEffect(() => {
+		let prevScrollpos = scrollY;
+		// console.log("PREV", prevScrollpos);
+		window.onscroll = () => {
+			const currentScrollPos = window.scrollY;
+
+			if (prevScrollpos >= currentScrollPos) {
+				setOpen(false);
+				// setOpenNavbar(false);
+			} else {
+				// setOpenNavbar(false);
+				setOpen(false);
+			}
+			prevScrollpos = currentScrollPos;
+		};
+	}, [scrollY]);
+
 	const handleLinkClick = (link: string) => {
 		setActiveLink(link);
 
@@ -48,7 +65,7 @@ export default function MobileNav() {
 			"ul",
 			{
 				width: open ? 180 : 0,
-				height: open ? 200 : 0,
+				height: open ? 245 : 0,
 				opacity: open ? 1 : 0,
 			},
 			{
@@ -88,18 +105,18 @@ export default function MobileNav() {
 				<div className="home__header-mobile mt-3x overflow-hidden sm:mt-0">
 					<motion.button
 						id="menu-button"
-						className={cn(" flex flex-col justify-center gap-y-[3px] py-0.5")}
+						className={cn(" flex flex-col items-end gap-y-[3px] py-0.5")}
 						onClick={() => setOpen(!open)}
 						whileTap={{ scale: 0.95 }}
 						data-menu-open={open}
 					>
 						{[1, 2, 3].map((num) => (
-							<span key={num} />
+							<span key={num} className="bg-white" />
 						))}
 					</motion.button>
 				</div>
 				<ul
-					className="absolute right-0 top-10 overflow-hidden pl-4 pt-1"
+					className="absolute right-0 top-10 overflow-hidden pl-4 pt-1 bg-primary/30 backdrop-blur-xl"
 					data-menu-ul
 				>
 					{NAV_LINKS.map((link, index) => (
@@ -132,6 +149,11 @@ export default function MobileNav() {
 							</button>
 						</motion.li>
 					))}
+					<motion.li>
+						<button className=" md:hidden text-black bg-white font-bold text-sm px-5 py-3 rounded-full">
+							Add to Server
+						</button>
+					</motion.li>
 				</ul>
 			</div>
 		</>

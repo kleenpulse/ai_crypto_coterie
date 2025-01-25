@@ -6,24 +6,20 @@ import useInView from "@/hooks/util-hooks/useInView";
 import { HowItWorksCard } from "../cards/how-it-works-card";
 
 export const Metrics = () => {
-	const howtoTitle = useRef<HTMLDivElement>(null);
-	const sandorRef = useRef<HTMLDivElement>(null);
-	const sandorInView = useInView({
-		ref: sandorRef,
-		once: true,
-	});
-	const howtoTitleInView = useInView({
-		ref: howtoTitle,
+	const metrics = useRef<HTMLDivElement>(null);
+
+	const metricsInView = useInView({
+		ref: metrics,
 		once: true,
 	});
 
 	return (
 		<div className="w-full flex flex-col gap-y-10 px-3 min-[500px]:px-5 md:px-8  min-[1440px]:px-12 py-10 md:pb-20 xl:pb-44 md:pt-20 items-center relative z-20   pb-20">
 			<div
-				ref={howtoTitle}
+				ref={metrics}
 				style={{
-					transform: howtoTitleInView ? "none" : "translateY(100px)",
-					opacity: howtoTitleInView ? 1 : 0,
+					transform: metricsInView ? "none" : "translateY(100px)",
+					opacity: metricsInView ? 1 : 0,
 					transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
 				}}
 				id="features"
@@ -47,6 +43,7 @@ export const Metrics = () => {
 							<CircularProgress
 								percentage={metric.percentage}
 								color={metric.color}
+								metricsInView={metricsInView}
 							/>
 
 							<p className="text-sm lg:text-lg text-center text-gray-200 font-light">
@@ -63,16 +60,19 @@ export const Metrics = () => {
 const CircularProgress = ({
 	percentage,
 	color,
+	metricsInView,
 }: {
 	percentage: number;
 	color: string;
+	metricsInView: boolean;
 }) => {
 	const [progress, setProgress] = useState(0);
 
 	useEffect(() => {
+		if (!metricsInView) return;
 		const timer = setTimeout(() => setProgress(percentage), 100);
 		return () => clearTimeout(timer);
-	}, [percentage]);
+	}, [percentage, metricsInView]);
 
 	return (
 		<div className="relative size-32 lg:size-44">

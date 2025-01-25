@@ -35,7 +35,7 @@ export const HowItWorks = () => {
 				</h2>
 			</div>
 			<div className="w-full flex flex-col-reverse max-[900px]:items-center min-[900px]:flex-row justify-center  gap-x-10 gap-y-16 overflow-y-clip">
-				<div className="overflow-x-auto w-full flex gap-x-3 shrink-0 custom_scroll pb-3 xl:justify-center">
+				<div className="overflow-x-auto w-full flex gap-x-3 shrink-0 custom_scroll pb-3 min-[1900px]:justify-center">
 					{INTEGRATION.map((item, index) => (
 						<HowItWorksCard key={item.id} {...item} index={index} />
 					))}
