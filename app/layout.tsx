@@ -21,6 +21,35 @@ export const metadata: Metadata = {
 	title: "Coterie",
 	description:
 		"Your AI-Powered Crypto Analysis Companion | nalyze contract addresses, track sentiment trends, and stay ahead in the crypto market.",
+	openGraph: {
+		title: "Coterie",
+		description:
+			"Your AI-Powered Crypto Analysis Companion | nalyze contract addresses, track sentiment trends, and stay ahead in the crypto market.",
+		type: "website",
+		locale: "en_US",
+		images: [
+			{
+				url: "/coterie-banner.png",
+				width: 800,
+				height: 600,
+				alt: "Coterie",
+			},
+		],
+	},
+	twitter: {
+		title: "Coterie",
+		description:
+			"Your AI-Powered Crypto Analysis Companion | nalyze contract addresses, track sentiment trends, and stay ahead in the crypto market.",
+		creator: "@Coterie",
+		images: [
+			{
+				url: "/coterie-banner.png",
+				width: 800,
+				height: 600,
+				alt: "Coterie",
+			},
+		],
+	},
 };
 
 export default function RootLayout({

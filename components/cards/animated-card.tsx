@@ -20,8 +20,8 @@ export const AnimatedCard = ({
 	const [transformStyle, setTransformStyle] = useState("");
 	const itemRef = useRef<HTMLDivElement | null>(null);
 
-	const INTENSITY_X = 10;
-	const INTENSITY_Y = -10;
+	const INTENSITY_X = 15;
+	const INTENSITY_Y = -15;
 
 	const handleMouseMove = (e: { clientX: number; clientY: number }) => {
 		if (!itemRef.current) return;
@@ -48,25 +48,31 @@ export const AnimatedCard = ({
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5, delay: index * 0.3 }}
 			viewport={{ once: true }}
-			ref={itemRef}
-			onMouseMove={handleMouseMove}
-			onMouseLeave={handleMouseLeave}
-			style={{ transform: transformStyle }}
-			className={cn(
-				"flex w-full items-center gap-x-5 lg:gap-x-3 gap-y-4 rounded-2xl   hover:shadow-[0_0_20px_0_rgba(0,0,0,0.1)]   p-6 xl:gap-y-6 ",
-				{
-					"bg-accent-yellow/50": data.id === 1,
-					"bg-accent-purple/70": data.id === 2,
-					"bg-white/45": data.id === 3,
-				}
-			)}
+			className="size-full"
 		>
-			<div className="max-h-[320px]">
-				<data.icon />
-			</div>
-			<div className="text-white">
-				<h2 className="text-sm font-bold lg:text-lg">{data.title}</h2>
-				<p className="text-xs sm:text-sm lg:text-[18px]">{data.description}</p>
+			<div
+				ref={itemRef}
+				onMouseMove={handleMouseMove}
+				onMouseLeave={handleMouseLeave}
+				style={{ transform: transformStyle }}
+				className={cn(
+					"flex w-full items-center gap-x-5 lg:gap-x-3 gap-y-4 rounded-2xl   hover:shadow-[0_0_20px_0_rgba(0,0,0,0.1)] md:min-h-[170px]  p-6 xl:gap-y-6  relative z-40",
+					{
+						"bg-accent-yellow/50": data.id === 1,
+						"bg-accent-purple/70": data.id === 2,
+						"bg-white/45": data.id === 3,
+					}
+				)}
+			>
+				<div className="max-h-[320px]">
+					<data.icon />
+				</div>
+				<div className="text-white">
+					<h2 className="text-sm font-bold lg:text-lg">{data.title}</h2>
+					<p className="text-xs sm:text-sm lg:text-[18px]">
+						{data.description}
+					</p>
+				</div>
 			</div>
 		</motion.div>
 	);

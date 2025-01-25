@@ -1,15 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { INTEGRATION, METRICS } from "@/lib/constants";
+import { METRICS } from "@/lib/constants";
 import useInView from "@/hooks/util-hooks/useInView";
-import { HowItWorksCard } from "../cards/how-it-works-card";
 
 export const Metrics = () => {
 	const metrics = useRef<HTMLDivElement>(null);
+	const metricsCards = useRef<HTMLDivElement>(null);
 
 	const metricsInView = useInView({
 		ref: metrics,
+		once: true,
+	});
+	const metricsCardInView = useInView({
+		ref: metricsCards,
 		once: true,
 	});
 
@@ -34,7 +38,15 @@ export const Metrics = () => {
 				</p>
 			</div>
 			<div className="w-full flex  justify-center  overflow-y-clip">
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white bg-white/20 p-8 rounded-xl">
+				<div
+					ref={metricsCards}
+					style={{
+						transform: metricsInView ? "none" : "translateY(100px)",
+						opacity: metricsInView ? 1 : 0,
+						transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+					}}
+					className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white bg-white/20 p-8 rounded-xl"
+				>
 					{METRICS.map((metric) => (
 						<div
 							key={metric.id}
@@ -43,7 +55,7 @@ export const Metrics = () => {
 							<CircularProgress
 								percentage={metric.percentage}
 								color={metric.color}
-								metricsInView={metricsInView}
+								metricsInView={metricsCardInView}
 							/>
 
 							<p className="text-sm lg:text-lg text-center text-gray-200 font-light">
@@ -70,7 +82,7 @@ const CircularProgress = ({
 
 	useEffect(() => {
 		if (!metricsInView) return;
-		const timer = setTimeout(() => setProgress(percentage), 100);
+		const timer = setTimeout(() => setProgress(percentage), 300);
 		return () => clearTimeout(timer);
 	}, [percentage, metricsInView]);
 
