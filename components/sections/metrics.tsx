@@ -5,8 +5,8 @@ import { METRICS } from "@/lib/constants";
 import useInView from "@/hooks/util-hooks/useInView";
 
 export const Metrics = () => {
-	const metrics = useRef<HTMLDivElement>(null);
 	const metricsCards = useRef<HTMLDivElement>(null);
+	const metrics = useRef<HTMLDivElement>(null);
 
 	const metricsInView = useInView({
 		ref: metrics,
@@ -50,12 +50,11 @@ export const Metrics = () => {
 					{METRICS.map((metric) => (
 						<div
 							key={metric.id}
-							className="flex flex-col gap-y-4 max-w-[180px] lg:max-w-[250px] items-center"
+							className="flex flex-col gap-y-4 max-w-[250px] lg:max-w-[250px] items-center"
 						>
 							<CircularProgress
 								percentage={metric.percentage}
 								color={metric.color}
-								metricsInView={metricsCardInView}
 							/>
 
 							<p className="text-sm lg:text-lg text-center text-gray-200 font-light">
@@ -72,22 +71,48 @@ export const Metrics = () => {
 const CircularProgress = ({
 	percentage,
 	color,
-	metricsInView,
 }: {
 	percentage: number;
 	color: string;
-	metricsInView: boolean;
 }) => {
 	const [progress, setProgress] = useState(0);
+	const metrics = useRef<HTMLDivElement>(null);
+
+	const metricsInView = useInView({
+		ref: metrics,
+		once: true,
+	});
 
 	useEffect(() => {
 		if (!metricsInView) return;
-		const timer = setTimeout(() => setProgress(percentage), 300);
-		return () => clearTimeout(timer);
+
+		const end = percentage;
+		const duration = 3000;
+		let startTimestamp: number | null = null;
+
+		const easeOutQuad = (t: number) => t * (2 - t);
+
+		const step = (timestamp: number) => {
+			if (!startTimestamp) startTimestamp = timestamp;
+			const elapsed = timestamp - startTimestamp;
+			const progress = Math.min(elapsed / duration, 1);
+			const easedProgress = easeOutQuad(progress);
+			setProgress(Math.floor(easedProgress * end));
+
+			if (progress < 1) {
+				window.requestAnimationFrame(step);
+			}
+		};
+
+		window.requestAnimationFrame(step);
+
+		return () => {
+			// Cleanup if needed
+		};
 	}, [percentage, metricsInView]);
 
 	return (
-		<div className="relative size-32 lg:size-44">
+		<div ref={metrics} className="relative size-44">
 			<svg className="w-full h-full" viewBox="0 0 100 100">
 				{/* Background circle */}
 				<circle
@@ -114,7 +139,7 @@ const CircularProgress = ({
 					style={{
 						transformOrigin: "50% 50%",
 						transform: "rotate(-90deg)",
-						transition: "stroke-dashoffset 1s ease-out",
+						transition: "stroke-dashoffset 2s ease-out", // Updated to 2s to match the new duration
 					}}
 				/>
 			</svg>
