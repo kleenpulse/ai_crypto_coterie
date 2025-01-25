@@ -34,12 +34,11 @@ export const HowItWorks = () => {
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, ab.
 				</h2>
 			</div>
-			<div className="w-full flex flex-col-reverse max-[900px]:items-center min-[900px]:flex-row justify-center  gap-x-10 gap-y-16 overflow-y-clip">
-				<div className="overflow-x-auto w-full flex gap-x-3 shrink-0 custom_scroll pb-3 min-[1900px]:justify-center">
-					{INTEGRATION.map((item, index) => (
-						<HowItWorksCard key={item.id} {...item} index={index} />
-					))}
-				</div>
+
+			<div className="overflow-x-auto w-full flex  gap-x-3 shrink-0 custom_scroll pb-3 min-[1900px]:justify-center h-full overflow-y-clip lg:pb-4 pl-16 sm:pl-0">
+				{INTEGRATION.map((item, index) => (
+					<HowItWorksCard key={item.id} {...item} index={index} />
+				))}
 			</div>
 		</div>
 	);

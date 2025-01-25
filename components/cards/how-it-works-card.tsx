@@ -25,7 +25,7 @@ export const HowItWorksCard = ({
 					0.1 * index
 				}s`,
 			}}
-			className="w-[322px] relative flex flex-col shrink-0 justify-end gap-y-3	 font-roboto  text-xs sm:text-sm md:text-base h-[425px] border border-gray-400 rounded-xl p-3 bg-white/20 backdrop-blur-md"
+			className="min-w-[300px] relative flex flex-col shrink-0x justify-end gap-y-3	 font-roboto  text-xs sm:text-sm md:text-base h-[425px] border border-gray-400 rounded-xl p-3 bg-white/20 backdrop-blur-md"
 		>
 			<p className="text-white font-light">{description}</p>
 		</div>

@@ -15,7 +15,7 @@ export const Features = () => {
 	});
 
 	return (
-		<div className="w-full flex flex-col gap-y-10 md:gap-y-20 px-3 min-[500px]:px-5 md:px-8  min-[1440px]:px-12 py-10 md:pb-16 md:pt-20 items-center relative z-50 bg-[linear-gradient(0deg,#516ACA_55%,rgba(82,107,202,0.00)_100%)]   -mt-20 lg:-mt-32 max-w-[1900px] mx-auto">
+		<div className="w-full flex flex-col gap-y-10 md:gap-y-20 px-3 min-[500px]:px-5 md:px-8  min-[1440px]:px-12 pt-16 md:pb-16 md:pt-20 items-center relative z-50 bg-[linear-gradient(0deg,#516ACA_55%,rgba(82,107,202,0.00)_100%)]   -mt-32 max-w-[1900px] mx-auto ">
 			<div
 				ref={listinTitleRef}
 				style={{

@@ -43,14 +43,14 @@ export const About = () => {
 	};
 	return (
 		<div
-			className="w-full justify-between flex items-center flex-col min-[900px]:flex-row gap-10 py-20 lg:py-32 px-4 lg:px-8 max-w-[1900px] mx-auto relative"
+			className="w-full justify-between flex items-center flex-col min-[900px]:flex-row gap-10 py-10 sm:py-20 lg:py-32 px-4 lg:px-8 max-w-[1900px] mx-auto relative"
 			style={{
 				backgroundImage: "url('/about/checkers.png')",
 				backgroundSize: "cover",
 				backgroundAttachment: "fixed",
 			}}
 		>
-			<div className="bg-gradient-to-b from-[#516ACA] from-0% to-transparent to-15% w-full h-full absolute inset-0 z-20 pointer-events-none" />
+			<div className="bg-gradient-to-b from-[#516ACA] from-0% to-transparent to-15% w-full h-full absolute inset-0 z-20 pointer-events-none hidden md:block" />
 			<div
 				ref={aboutTitleRef}
 				className="flex flex-col max-w-[500px] xl:max-w-[610px] min-[1440px]:max-w-[800px] gap-y-8 justify-between py-2"
@@ -72,14 +72,11 @@ export const About = () => {
 						opacity: aboutTitleInView ? 1 : 0,
 						transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
 					}}
-					className="text-xl  min-[1440px]:text-2xl font-helvetica-regular font-light text-white/90  "
+					className="sm:text-xl  min-[1440px]:text-2xl font-helvetica-regular font-light text-white/90  "
 				>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-					commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-					et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
-					felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-					consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-					nec, vulputate ege
+					This bot is designed to help crypto communities understand the
+					sentiment behind tokens. Whether you’re a trader or commuanity
+					manager, get actionable insights in seconds.
 				</p>
 				<Button className="w-fit  flex  items-center  font-bold border border-gray-300 rounded-full justify-baseline bg-accent-yellow text-black xl:px-10">
 					<span>Join Community</span>

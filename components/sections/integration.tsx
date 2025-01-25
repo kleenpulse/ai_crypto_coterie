@@ -17,7 +17,7 @@ export const Integration = () => {
 	});
 
 	return (
-		<div className="w-full flex flex-col gap-y-10 px-3 min-[500px]:px-5 md:px-8  min-[1440px]:px-12 py-10 md:pb-20 xl:pb-44 md:pt-20 items-center relative z-20   pb-20">
+		<div className="w-full flex flex-col gap-y-10 px-3 min-[500px]:px-5 md:px-8  min-[1440px]:px-12 py-10 md:pb-20 xl:pb-44 md:pt-20 items-center relative z-20   pb-20 overflow-x-clip">
 			<div
 				ref={integration}
 				style={{
@@ -37,7 +37,7 @@ export const Integration = () => {
 				</p>
 			</div>
 			<div className="w-full flex flex-col-reverse max-[900px]:items-center min-[900px]:flex-row justify-center  gap-x-10 gap-y-16">
-				<div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 relative">
+				<div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 relative ">
 					<span className="absolute left-[-10rem] top-[-10rem] z-20 ">
 						<BlurImage
 							src="/integration/integration-ribbon.png"

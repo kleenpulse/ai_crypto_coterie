@@ -30,14 +30,14 @@ const HeroSection = () => {
 	}, []);
 
 	return (
-		<div className="w-full  relative lg:max-h-[1200px] min-h-screenx flex justify-center pt-32  md:pt-32  xl:pt-40  overflow-x-clip  bg-gradient-to-b from-primary to-[#2B49BB] to-90% z-20">
+		<div className="w-full  relative lg:max-h-[1200px] min-h-screenx flex justify-center pt-24  md:pt-32  xl:pt-40  overflow-x-clip  bg-gradient-to-b from-primary to-[#2B49BB] to-90% z-20">
 			<div
 				id="hero__ref"
 				ref={heroRef}
 				className="w-full absolute top-10  h-10 bg-transparent z-10 pointer-events-none"
 			/>
 
-			<div className="flex flex-col gap-y-8  items-center relative z-10 w-full max-w-[1900px] mx-auto px-4">
+			<div className="flex flex-col gap-y-8  items-center relative z-10 w-full max-w-[1900px] mx-auto px-4x lg:px-0">
 				<span className="absolute -left-8 lg:left-20 xl:left-32 top-10">
 					<BlurImage src="/home/shield.png" width={47} height={47} alt="" />
 				</span>
@@ -56,7 +56,7 @@ const HeroSection = () => {
 				<div className="text-white relative z-20 w-full md:min-h-[100px] flex flex-col md:items-center gap-y-4 min-[500px]:max-w-[450px] max-w-[350px] md:max-w-[580px] lg:max-w-[780px]">
 					<h1
 						id="hero__title"
-						className="font-helveticaBold font-bold text-3xl md:text-4xl lg:text-6xl md:text-center"
+						className="font-helveticaBold font-bold text-4xl md:text-4xl lg:text-6xl md:text-center"
 					>
 						Your AI-Powered Crypto Analysis Companion
 					</h1>
@@ -78,8 +78,16 @@ const HeroSection = () => {
 						<span>Join Community</span>
 					</Button>
 				</div>
-				<div className="flex lg:hidden h-[400px] mb-4 rounded-xl items-center justify-center w-full bg-white/20 text-white border border-white/40">
-					<p>Image here</p>
+				<div className="flex lg:hidden  rounded-xl items-center justify-center shrink-0z w-full relative min-h-[400px]  ">
+					<BlurImage
+						src="/home/dashboard-mobile.png"
+						width={450}
+						height={400}
+						quality={100}
+						alt="dashboard"
+						className="object-coverx size-full max-w-full absolute right-[-1rem]"
+						draggable={false}
+					/>
 				</div>
 				<div className="hidden lg:flex w-full justify-center relative ">
 					<div className="absolute left-0 top-[-6rem] left_ribbon  grayscale-100 brightness-200 ">

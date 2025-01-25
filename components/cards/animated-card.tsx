@@ -65,10 +65,8 @@ export const AnimatedCard = ({
 				<data.icon />
 			</div>
 			<div className="text-white">
-				<h2 className="font-proxima font-bold lg:text-lg">{data.title}</h2>
-				<p className="font-manrope text-sm lg:text-[18px]">
-					{data.description}
-				</p>
+				<h2 className="text-sm font-bold lg:text-lg">{data.title}</h2>
+				<p className="text-xs sm:text-sm lg:text-[18px]">{data.description}</p>
 			</div>
 		</motion.div>
 	);

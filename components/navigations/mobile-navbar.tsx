@@ -26,10 +26,10 @@ export default function MobileNav() {
 	useEffect(() => {
 		let prevScrollpos = scrollY;
 		// console.log("PREV", prevScrollpos);
-		window.onscroll = () => {
+		const closeNavOnScroll = () => {
 			const currentScrollPos = window.scrollY;
 
-			if (prevScrollpos >= currentScrollPos) {
+			if (prevScrollpos >= currentScrollPos || hideNavbar) {
 				setOpen(false);
 				// setOpenNavbar(false);
 			} else {
@@ -38,7 +38,13 @@ export default function MobileNav() {
 			}
 			prevScrollpos = currentScrollPos;
 		};
-	}, [scrollY]);
+
+		window.addEventListener("scroll", closeNavOnScroll);
+
+		return () => {
+			window.removeEventListener("scroll", closeNavOnScroll);
+		};
+	}, [hideNavbar]);
 
 	const handleLinkClick = (link: string) => {
 		setActiveLink(link);
@@ -128,9 +134,9 @@ export default function MobileNav() {
 									setOpen(false);
 								}}
 								className={cn(
-									"relative w-fit text-sm font-medium text-white transition-colors duration-300 hover:text-accent-main",
+									"relative w-fit text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-white",
 									{
-										"text-accent-main": activeLink === link.link,
+										"text-white": activeLink === link.link,
 									}
 								)}
 							>

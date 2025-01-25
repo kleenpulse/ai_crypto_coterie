@@ -16,7 +16,7 @@ export default function Home() {
 			<About />
 			<Integration />
 			<HowItWorks />
-			<section className="w-full flex flex-col bg-gradient-to-t from-primary from-30% to-[#2B49BB] ">
+			<section className="w-full flex flex-col bg-gradient-to-t from-[#01014e] from-0% via-primary via-10%  to-[#2B49BB] ">
 				<Metrics />
 				<FAQs />
 				<Footer />
