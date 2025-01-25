@@ -63,7 +63,7 @@ export default function HomeNavbar() {
 				"fixed left-1/2 z-[100] flex w-full md:max-w-[90%] -translate-x-1/2 transform-gpu items-center rounded-full md:border border-white/15 px-3 py-2 transition-all duration-300 sm:px-5  xl:max-w-[1217px] font-inter",
 				isHeroInView
 					? "top-2 md:top-5 border-white/5 md:bg-white/10"
-					: "top-2 border-white/25 bg-primary/20 md:bg-white/15 backdrop-blur-md",
+					: "top-2 border-white/15 bg-primary/20  backdrop-blur-md",
 				hideNavbar ? "-translate-y-[150px]" : "translate-y-0"
 			)}
 		>
