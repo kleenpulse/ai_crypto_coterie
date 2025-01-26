@@ -31,15 +31,14 @@ interface FAQItem {
 export const FAQS: FAQItem[] = [
 	{
 		id: 1,
-		question: "What is Coterie?",
+		question: "What is COTERIE?",
 		answer:
-			"Coterie is a meme token that operates on the Avilian blockchain. It is designed for those who want to make a profit through DeFi and challenge traditional banking systems.",
+			"COTERIE is an AI-powered Discord bot designed to scan crypto contract addresses (CAs) and provide real-time sentiment analysis based on group reactions.",
 	},
 	{
 		id: 2,
-		question: "How does Coterie work?",
-		answer:
-			"Coterie operates on the Avilian blockchain. You can buy, sell, and trade $cotr tokens on decentralized exchanges (DEXs) like Dexscreener to increase your profit.",
+		question: "How do I integrate COTERIE into my Discord server?",
+		answer: `Simply click the "Add to Server" button on our website and follow the integration guide provided in our GitHub repository.`,
 	},
 
 	{
@@ -50,16 +49,16 @@ export const FAQS: FAQItem[] = [
 	},
 	{
 		id: 4,
-		question: "Is Coterie legitimate?",
+		question: "How does COTERIE determine sentiment?",
 		answer:
-			"We strive to be transparent and honest with our community. However, the crypto market is volatile, so please be cautious and invest wisely",
+			"COTERIE analyzes chat reactions within each group, categorizing sentiment as bullish, bearish, farming potential, or neutral. These insights evolve as more groups scan the token.",
 	},
 
 	{
 		id: 5,
 		hasLink: true,
-		question: "Where can I learn more about Coterie?",
-		answer: `Join our <a href="https://t.me/banksterthecat" target="_blank" class="text-pinkish font-normal">Telegram channel</a> to stay up-to-date on our latest news and developments.`,
+		question: "Is COTERIE free to use?",
+		answer: `COTERIE offers core features for free, with premium tiers available for advanced analytics and custom sentiment reports.`,
 	},
 ];
 
