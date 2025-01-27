@@ -134,3 +134,22 @@ export const INTEGRATION: IntegrationProps[] = [
 		description: "5. Use the /scan command to get started!",
 	},
 ];
+export const HOWITWORKS: IntegrationProps[] = [
+	{
+		id: 1,
+		description: "Input contract address (e.g., 0x1234abcd...)",
+	},
+	{
+		id: 2,
+		description: "The bot scans relevant Discord groups for discussions",
+	},
+	{
+		id: 3,
+		description:
+			"Metrics like Bullish, Bearish, Farming Potential, and Neutral sentiment are generated.",
+	},
+	{
+		id: 4,
+		description: "A dashboard visualizes trends over time.",
+	},
+];

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { INTEGRATION } from "@/lib/constants";
+import { HOWITWORKS, INTEGRATION } from "@/lib/constants";
 import useInView from "@/hooks/util-hooks/useInView";
 import { HowItWorksCard } from "../cards/how-it-works-card";
 
@@ -36,7 +36,7 @@ export const HowItWorks = () => {
 			</div>
 
 			<div className="overflow-x-auto w-full flex  gap-x-3 shrink-0 custom_scroll pb-3 min-[1900px]:justify-center h-full overflow-y-clip lg:pb-4 pl-16 sm:pl-0">
-				{INTEGRATION.map((item, index) => (
+				{HOWITWORKS.map((item, index) => (
 					<HowItWorksCard key={item.id} {...item} index={index} />
 				))}
 			</div>
