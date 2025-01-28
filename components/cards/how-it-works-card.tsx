@@ -25,10 +25,25 @@ export const HowItWorksCard = ({
 					0.1 * index
 				}s`,
 			}}
-			className="min-w-[300px] relative flex flex-col shrink-0x justify-end gap-y-3	    h-[425px] border border-gray-400 rounded-xl p-3 bg-white/20 backdrop-blur-md"
+			className="min-w-[300px] relative flex flex-col shrink-0x justify-between items-center gap-y-3	    h-[425px] border border-white/40 rounded-xl p-3 bg-white/20 backdrop-blur-md"
 		>
-			<h3 className="text-white font-normal">Step {index + 1}</h3>
-			<p className="text-white font-light text-xs sm:text-sm ">{description}</p>
+			<div className="flex items-center justify-center  p-2 rounded-full bg-[#2B49BB] size-[179px]">
+				<BlurImage
+					src={image!}
+					alt={"illustration"}
+					className="size-full max-w-[117px]  object-contain mix-blend-plus-lighter"
+					width={117}
+					height={117}
+				/>
+			</div>
+			<div className="flex flex-col gap-y-3">
+				<h3 className="text-white font-bold font-helvetica-bold text-xl sm:text-2xl xl:text-[28px]">
+					{title}
+				</h3>
+				<p className="text-white font-light text-xs sm:text-base xl:text-xl ">
+					{description}
+				</p>
+			</div>
 		</div>
 	);
 };

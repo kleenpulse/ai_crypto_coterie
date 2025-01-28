@@ -47,7 +47,7 @@ const FAQs = () => {
 						opacity: faqsInView ? 1 : 0,
 						transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
 					}}
-					className="text-center font-inter text-xl font-bold md:text-3xl lg:text-5xl"
+					className="text-center font-inter text-xl font-bold md:text-2xl lg:text-3xl xl:text-5xl"
 				>
 					Frequently Asked Questions
 				</h1>
@@ -73,7 +73,7 @@ const FAQs = () => {
 								<p className="text-left  text-sm font-medium  min-[400px]:text-base">
 									{item.question}
 								</p>
-								<div className="absolute right-2 top-4 lg:top-2 place-items-center">
+								<div className="absolute right-2 top-1/2 lg:top-2 place-items-center">
 									<button className={cn("transition-transform duration-300")}>
 										{activeIndex === index ? (
 											<LuMinus className="size-5 lg:size-9 " />
