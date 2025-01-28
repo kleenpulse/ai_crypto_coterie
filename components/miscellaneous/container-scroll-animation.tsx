@@ -1,8 +1,7 @@
 "use client";
 import React, { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import BlurImage from "@/components/miscellaneous/blur-image";
-import VerifiedIcon from "../icons/verified-icon";
 
 export const ContainerScrollAnimation = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
@@ -33,7 +32,6 @@ export const ContainerScrollAnimation = () => {
 		[10, 0]
 	);
 	const scale = useTransform(scrollYProgress, [0, 0.5], scaleDimensions());
-	const translate = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
 	return (
 		<div
@@ -46,7 +44,7 @@ export const ContainerScrollAnimation = () => {
 					perspective: "1000px",
 				}}
 			>
-				<Card rotate={rotate} translate={translate} scale={scale} />
+				<Card rotate={rotate} scale={scale} />
 			</div>
 		</div>
 	);
@@ -55,11 +53,9 @@ export const ContainerScrollAnimation = () => {
 export const Card = ({
 	rotate,
 	scale,
-	translate,
 }: {
-	rotate: any;
-	scale: any;
-	translate: any;
+	rotate: MotionValue<number>;
+	scale: MotionValue<number>;
 }) => {
 	return (
 		<motion.div
@@ -70,7 +66,7 @@ export const Card = ({
 			className="hero__image scale-150z mx-auto w-full relative"
 		>
 			<BlurImage
-				src="/home/dashboard.png"
+				src="/home/dashboard.webp"
 				width={1130}
 				height={483}
 				quality={100}

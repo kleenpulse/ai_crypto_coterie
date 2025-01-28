@@ -90,12 +90,9 @@ export const Integration = () => {
 				<h2 className="font-helvetica-bold text-2xl md:text-4xl lg:text-5xl text-center">
 					Simple Integration Guide
 				</h2>
-				<p className="text-center max-w-[800px] lg:text-xl font-light">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, ab.
-				</p>
 			</div>
 			<div className="w-full flex flex-col-reverse max-[900px]:items-center min-[900px]:flex-row justify-center  gap-x-10 gap-y-16">
-				<div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 relative ">
+				<div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 relative ">
 					<span
 						data-ribbon-1
 						className="absolute left-[-10rem] top-[-10rem] z-20 "
@@ -126,7 +123,7 @@ export const Integration = () => {
 							opacity: integrationInView ? 1 : 0,
 							transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
 						}}
-						className="w-full max-w-[280px] xl:max-w-[300px] relative z-30 flex flex-col justify-center items-center gap-y-3	 font-roboto  text-xs sm:text-sm md:text-base  h-[150px] sm:h-[232px] border border-yellow-300 rounded-xl p-3 bg-accent-yellow backdrop-blur-md"
+						className="w-full max-w-[280px] xl:max-w-[300px] relative z-30 flex flex-col justify-center items-center gap-y-3	 font-roboto  text-xs sm:text-sm md:text-base  h-[150px] sm:h-[200px] lg:h-[232px] border border-yellow-300 rounded-xl p-3 bg-accent-yellow backdrop-blur-md"
 					>
 						<Button className="w-fit  flex  items-center gap-x-2 lg:gap-x-4 font-medium bg-black rounded-full justify-baseline">
 							<span>Add to Server</span>

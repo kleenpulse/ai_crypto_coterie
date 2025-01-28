@@ -14,10 +14,10 @@ export default function Home() {
 
 			<Features />
 			<About />
-			<Integration />
 			<HowItWorks />
+			<Metrics />
 			<section className="w-full flex flex-col bg-gradient-to-t from-[#01014e] from-0% via-primary via-10%  to-[#2B49BB] ">
-				<Metrics />
+				<Integration />
 				<FAQs />
 				<Footer />
 			</section>

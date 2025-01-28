@@ -62,9 +62,9 @@ export const About = () => {
 						opacity: aboutTitleInView ? 1 : 0,
 						transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
 					}}
-					className="text-6xl font-helvetica-bold  text-white max-w-[438px] min-[1440px]:max-w-[600px] "
+					className="text-5xl xl:text-6xl font-helvetica-bold  text-white max-w-[438px] min-[1440px]:max-w-[600px] "
 				>
-					About Bot
+					About COTERIE
 				</h2>
 				<p
 					style={{
@@ -72,14 +72,16 @@ export const About = () => {
 						opacity: aboutTitleInView ? 1 : 0,
 						transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
 					}}
-					className="sm:text-xl  min-[1440px]:text-2xl font-helvetica-regular font-light text-white/90  "
+					className="xl:text-xl  min-[1440px]:text-2xl font-helvetica-regular font-light text-white/90  "
 				>
-					This bot is designed to help crypto communities understand the
-					sentiment behind tokens. Whether you’re a trader or commuanity
-					manager, get actionable insights in seconds.
+					COTERIE is an advanced AI-powered Discord bot designed to analyze
+					crypto contract addresses (CAs) and deliver real-time sentiment
+					insights. With cutting-edge technology, it tracks group reactions,
+					highlights notable scans, and provides actionable analysis to help you
+					stay ahead in the crypto world.
 				</p>
 				<Button className="w-fit  flex  items-center  font-bold border border-gray-300 rounded-full justify-baseline bg-accent-yellow text-black xl:px-10">
-					<span>Join Community</span>
+					<span>Join Discord</span>
 				</Button>
 			</div>
 			<div
@@ -98,7 +100,7 @@ export const About = () => {
 					style={{ transform: transformStyle }}
 				>
 					<BlurImage
-						src="/about/about-card.png"
+						src="/about/about-card.webp"
 						alt="about"
 						width={700}
 						height={700}
