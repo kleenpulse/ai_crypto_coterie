@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
 import useWindowHeight from "@/hooks/util-hooks/use-window-height";
 import { useNavState } from "@/hooks/use-nav-state";
@@ -81,7 +81,7 @@ export default function HomeNavbar() {
 						}}
 					>
 						<Image src="/home/logo.png" width={40} height={40} alt="" />
-						<span className="font-semibold text-white sm:text-2xl lg:text-3xl font-inter block md:hidden min-[900px]:block">
+						<span className="font-semibold text-white sm:text-2xl lg:text-3xl font-inter block md:hidden min-[900px]:!block">
 							Coterie
 						</span>
 					</button>
